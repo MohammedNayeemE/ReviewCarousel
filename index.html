@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .container{
+        display: flex;
+        flex-direction: column;
+        padding: 13px;
+        border: 3px solid rgb(255, 255, 255);
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 460px;
+    }
+    .content p{
+       
+       font-family: Georgia, 'Times New Roman', Times, serif;
+       text-align: left;
+       line-height: 2;
+    }
+    .buttons{
+        padding: 5px;
+
+    }
+    .btn{
+        border: none;
+        border-radius: 9px;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+
+    }
+    #image{
+        border: 2px solid purple;;
+        width: 200px;
+        height: 200px;
+    }
+    #name{
+        font-size: 20px;
+    }
+    .con{
+            display: flex;
+            justify-content: right;
+            
+        }
+        .nav{
+            width: 200px;
+            height: 50px;
+            margin: 10px;
+        }
+        hr {
+                width: 50px;
+            }
+
+</style>
+    
+</head>
+<body>
+    <div class="con">
+        <button class="btn" >light</button>
+    </div>
+    <h2 style="text-align: center;">STORY</h2>
+    <hr>
+    <div class="container">
+        <div class="content">
+           <img  src="" alt="img" id="image">
+           <p id="name">NAME</p>
+           <p id="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid consectetur ducimus labore repellat odio dolore cumque voluptate pariatur. Tempore, dolore!</p>
+        </div>
+        <div class="buttons">
+           <button class="btn prev nav">
+              prev
+           </button><button class="btn next nav">
+               next
+           </button>
+           <button class="btn sup nav">
+              sup
+           </button>
+        </div>
+    </div>
+
+
+
+
+    <script src="review.js"></script>
+    <script>
+        var isBlack = false;
+        
+            document.querySelector(".btn").addEventListener('click',function(){
+
+                if(isBlack){
+                    document.querySelector("body").style.background ="";
+                    document.querySelector(".btn").textContent = "dark";
+                    document.getElementById("text").style.color = "black";
+                    document.querySelector("h2").style.color = "black";
+                    document.getElementById("name").style.color = "black";
+                }
+                else{
+                    document.querySelector("body").style.background ="black";
+                    document.querySelector(".btn").textContent = "light";
+                    document.getElementById("text").style.color = "white";
+                    document.querySelector("h2").style.color = "white";
+                    document.getElementById("name").style.color = "white";
+                }
+                isBlack = !isBlack;
+                
+                
+
+            })
+            
+        
+    </script>
+</body>
+</html>
